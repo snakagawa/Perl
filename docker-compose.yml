@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    build: ./
+    privileged: true # Apacheを起動するために特権モードにする
+    ports:
+      - "8080:80"
+    environment:
+      TZ: Asia/Tokyo
+    volumes:
+      - ./app:/var/www/app
+      - ./configs/app.conf:/etc/httpd/conf.d/app.conf
+    restart: always
