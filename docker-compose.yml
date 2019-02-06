@@ -2,7 +2,7 @@ version: "3"
 services:
   app:
     build: ./
-    privileged: true # Apacheを起動するために特権モードにする
+    privileged: true # Make privileged mode to start Apache
     ports:
       - "8080:80"
     environment:
